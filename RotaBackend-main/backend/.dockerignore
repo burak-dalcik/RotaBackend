@@ -1,0 +1,7 @@
+node_modules
+.env
+.env.*
+npm-debug.log*
+ml_service
+ml/*.pkl
+.git

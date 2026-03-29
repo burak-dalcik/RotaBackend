@@ -1,0 +1,148 @@
+{
+  "@@locale": "en",
+  "appTitle": "Rota",
+  "navStops": "Stops",
+  "navAI": "AI Model",
+  "navSettings": "Settings",
+  "navHome": "Home",
+  "navSearch": "Search",
+  "navAlerts": "Alerts",
+  "navSaved": "Saved",
+  "homeHeadline": "Find your next path",
+  "homeSubtitle": "Stop list and ETA previews come from the server; stop detail shows approaching trips and ML crowding.",
+  "searchHint": "Stop code or name",
+  "stopsSection": "Stops",
+  "viewMap": "VIEW MAP",
+  "stopsLoadError": "Could not load stops.",
+  "retry": "Try again",
+  "noStopsOnServer": "No stops registered on the server.",
+  "noSearchMatch": "No stops match your search.",
+  "stopRampOk": "Stop ramp: available",
+  "stopRampNo": "Stop ramp: none / unknown",
+  "noTrip60": "No trip in the next 60 min",
+  "minutesShort": "min",
+  "mapLabel": "MAP",
+  "mapHint": "Location permission required for live map (coming soon).",
+  "langSwitchToEnTooltip": "English",
+  "langSwitchToTrTooltip": "Turkish",
+  "mlTooltipAbout": "About ML",
+  "mlDialogTitle": "AI crowding estimate",
+  "mlDialogIntro": "Rota estimates crowding with an XGBoost model running on your server.",
+  "mlDialogFlow": "Flow: App → Node API → Python ML bridge → .pkl model.",
+  "mlDialogCapacity": "Percentages on this screen are based on vehicle capacity.",
+  "mlServerOn": "Server ML: on",
+  "mlServerOff": "Server ML: off",
+  "mlStatusUnreadable": "ML status could not be read (network or server).",
+  "ok": "OK",
+  "busesLoadError": "Could not load buses.",
+  "noApproaching60": "No buses approaching in the next 60 minutes.",
+  "refresh": "Refresh",
+  "pullRefreshHint": "Predictions come from the server ML model; pull down to refresh.",
+  "liveStatus": "LIVE",
+  "smartStopTitle": "Smart stop",
+  "comfortRoute": "ROUTE",
+  "comfortMinutesAway": "minutes away",
+  "comfortMlLabel": "AI CROWDING ESTIMATE",
+  "comfortFullnessPercent": "{percent}% full",
+  "@comfortFullnessPercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "mlBannerDisabled": "ML is off — crowding uses fallback mode.",
+  "mlBannerBridgeDown": "Cannot reach ML bridge — estimates may use fallback.",
+  "mlBannerModelsDown": "ML models failed to load — estimates may use fallback.",
+  "mlBannerLive": "Crowding estimate from the AI model (XGBoost).",
+  "mlBridgeDetail": "Bridge: {detail}",
+  "@mlBridgeDetail": {
+    "placeholders": {
+      "detail": {
+        "type": "String"
+      }
+    }
+  },
+  "iettRouteMapTitle": "IETT route",
+  "comfortMlModelBadge": "ML · XGBoost",
+  "comfortMlFallbackBadge": "Fallback estimate",
+  "comfortPaxEstimate": "Est. passengers: {pax} / {cap}",
+  "@comfortPaxEstimate": {
+    "placeholders": {
+      "pax": {
+        "type": "int"
+      },
+      "cap": {
+        "type": "int"
+      }
+    }
+  },
+  "mlDetailDialogTitle": "ML Prediction Detail",
+  "mlDetailRoute": "Route: {hatKodu} — {hatAdi}",
+  "@mlDetailRoute": {
+    "placeholders": {
+      "hatKodu": { "type": "String" },
+      "hatAdi": { "type": "String" }
+    }
+  },
+  "mlDetailCrowding": "Crowding: {percent}%",
+  "@mlDetailCrowding": {
+    "placeholders": {
+      "percent": { "type": "int" }
+    }
+  },
+  "mlDetailSource": "Source: {source}",
+  "@mlDetailSource": {
+    "placeholders": {
+      "source": { "type": "String" }
+    }
+  },
+  "mlDetailSourceModel": "XGBoost Model Prediction",
+  "mlDetailSourceFallback": "Fallback Estimate",
+  "mlDetailArrival": "Arrival: {minutes} minutes",
+  "@mlDetailArrival": {
+    "placeholders": {
+      "minutes": { "type": "int" }
+    }
+  },
+  "mlDetailAccessible": "Accessibility: {status}",
+  "@mlDetailAccessible": {
+    "placeholders": {
+      "status": { "type": "String" }
+    }
+  },
+  "mlDetailAccessibleYes": "Available",
+  "mlDetailAccessibleNo": "Not available",
+  "close": "Close",
+  "mlDashTitle": "AI Panel",
+  "mlDashModelName": "XGBoost Regressor",
+  "mlDashModelDesc": "Machine learning model trained for crowding prediction.",
+  "mlDashFeatures": "Features: Hour, Weekend, Holiday, Route code, Capacity",
+  "mlDashPipeline": "Data Pipeline",
+  "mlDashStep1": "Flutter app sends request",
+  "mlDashStep2": "Node.js API forwards request",
+  "mlDashStep3": "Python FastAPI runs model",
+  "mlDashStep4": "XGBoost generates prediction",
+  "mlDashBridgeStatus": "Bridge Status",
+  "mlDashConnected": "Connected",
+  "mlDashDisconnected": "Disconnected",
+  "mlDashModelLoaded": "Model Loaded",
+  "mlDashModelNotLoaded": "Model Not Loaded",
+  "mlDashCheckNow": "Check status",
+  "settingsTitle": "Settings",
+  "settingsLanguage": "Language",
+  "settingsLanguageDesc": "Change app interface language",
+  "settingsTurkish": "Türkçe",
+  "settingsEnglish": "English",
+  "settingsApiEndpoint": "API Endpoint",
+  "settingsAbout": "About",
+  "settingsAboutDesc": "Rota — Istanbul public transit AI crowding prediction app. tech.istanbul Datathon 2026 project.",
+  "settingsVersion": "Version",
+  "mlStatusActive": "AI Active",
+  "mlStatusInactive": "AI Inactive",
+  "navMap": "Map",
+  "mapNearestStop": "Nearest Stop",
+  "mapLocationServiceOff": "Location service is disabled. Please enable it in settings.",
+  "mapLocationDenied": "Location permission denied.",
+  "mapLocationDeniedForever": "Location permission permanently denied. Please enable it in settings."
+}

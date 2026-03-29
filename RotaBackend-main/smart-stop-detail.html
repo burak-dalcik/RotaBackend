@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#3c4758",
+              "secondary": "#545f71",
+              "surface-container-low": "#f3f3f3",
+              "inverse-on-surface": "#f1f1f1",
+              "surface-container": "#eeeeee",
+              "on-primary-container": "#799dd6",
+              "surface-dim": "#dadada",
+              "on-tertiary": "#ffffff",
+              "inverse-surface": "#2f3131",
+              "outline": "#737780",
+              "on-primary-fixed": "#001b3c",
+              "secondary-fixed": "#d8e3f9",
+              "tertiary-fixed-dim": "#e9c400",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#5a6577",
+              "surface": "#f9f9f9",
+              "secondary-fixed-dim": "#bcc7dc",
+              "primary-fixed-dim": "#a7c8ff",
+              "on-surface-variant": "#43474f",
+              "on-surface": "#1a1c1c",
+              "outline-variant": "#c3c6d1",
+              "on-primary-fixed-variant": "#1f477b",
+              "on-tertiary-fixed-variant": "#544600",
+              "surface-tint": "#3a5f94",
+              "on-error": "#ffffff",
+              "secondary-container": "#d8e3f9",
+              "surface-container-highest": "#e2e2e2",
+              "surface-variant": "#e2e2e2",
+              "tertiary-container": "#c9a900",
+              "tertiary-fixed": "#ffe16d",
+              "background": "#f9f9f9",
+              "primary-container": "#003366",
+              "error-container": "#ffdad6",
+              "surface-container-high": "#e8e8e8",
+              "surface-container-lowest": "#ffffff",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed": "#221b00",
+              "primary": "#001e40",
+              "surface-bright": "#f9f9f9",
+              "primary-fixed": "#d5e3ff",
+              "inverse-primary": "#a7c8ff",
+              "on-background": "#1a1c1c",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed": "#111c2b",
+              "on-tertiary-container": "#4c3e00",
+              "tertiary": "#705d00",
+              "on-primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .font-headline {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 bg-slate-50 dark:bg-slate-950 flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="transition-all duration-200 active:scale-95 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 p-2 rounded-full">
+<span class="material-symbols-outlined text-blue-900 dark:text-blue-400">arrow_back</span>
+</button>
+<h1 class="text-xl font-black text-blue-900 dark:text-blue-200 font-['Plus_Jakarta_Sans'] tracking-tight">Kadıköy Merkez</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="transition-all duration-200 active:scale-95 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 p-2 rounded-full">
+<span class="material-symbols-outlined text-blue-900 dark:text-blue-400">info</span>
+</button>
+</div>
+</header>
+<main class="max-w-2xl mx-auto px-5 pb-32 pt-6">
+<!-- Live Map Context / Header Area -->
+<div class="mb-8 relative rounded-full overflow-hidden h-40 group">
+<img class="w-full h-full object-cover" data-alt="minimalistic transit map view of Kadikoy Istanbul showing ferry docks and bus terminals in soft blue and grey tones" data-location="Istanbul Kadikoy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjX9nFYnW67fPeyoSsFhF5Ki7gFQjs5tBDRZQ235BijClgiyu9W7hp5KKGl0pT10Q29TBsLNfE7Axh7bZNq5eRu3khZu_R_rWlTWdsc3NEBthRD9yjPmg96W9NVbf2l4O7WQDmS2A7YPPJHXj07zFWyVTWUFvjSKLf_BtXd-JO7R6dpbUPuicKu17E14CFKHO2JcabTIf-JJM25kZYxj6Ntxtdg2MS_XhhOp6RCnGoGL-2Jjg1zyqb9Pq9XmA0CzpQh9fvbuayMjzh"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<span class="bg-primary text-white text-[10px] font-bold tracking-widest px-2 py-1 rounded-sm uppercase mb-1 block w-fit">Live Status</span>
+<h2 class="text-white font-headline font-extrabold text-2xl tracking-tight">Smart Terminal</h2>
+</div>
+</div>
+<!-- Scrollable ComfortCard List -->
+<section class="space-y-4">
+<!-- ComfortCard 1: High Crowdedness (Red) -->
+<div class="bg-surface-container-lowest rounded-full p-6 transition-all duration-300 active:scale-[0.98] shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+<div class="flex items-start justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="bg-tertiary-fixed text-on-tertiary-fixed font-headline font-bold text-lg px-3 py-1 rounded-lg">19F</div>
+<div class="max-w-[180px]">
+<p class="text-[10px] font-label font-bold text-slate-400 tracking-widest leading-none mb-1 uppercase">Route</p>
+<h3 class="text-sm font-headline font-bold text-primary leading-tight">FINDIKLI MAHALLESİ - YEDİTEPE ÜNİVERSİTESİ - KADIKÖY</h3>
+</div>
+</div>
+<span class="material-symbols-outlined text-blue-600">accessible</span>
+</div>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-4xl font-headline font-extrabold tracking-tighter text-primary">8</span>
+<span class="text-lg font-headline font-bold text-primary">Minutes Away</span>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center mb-1">
+<span class="text-[11px] font-label font-bold text-slate-500 tracking-wide uppercase">AI Occupancy Prediction</span>
+<span class="text-sm font-bold text-error">%85 Dolu</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<!-- ComfortCard 2: Moderate Crowdedness (Orange) -->
+<div class="bg-surface-container-lowest rounded-full p-6 transition-all duration-300 active:scale-[0.98] shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+<div class="flex items-start justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="bg-tertiary-fixed text-on-tertiary-fixed font-headline font-bold text-lg px-3 py-1 rounded-lg">14ES</div>
+<div class="max-w-[180px]">
+<p class="text-[10px] font-label font-bold text-slate-400 tracking-widest leading-none mb-1 uppercase">Route</p>
+<h3 class="text-sm font-headline font-bold text-primary leading-tight">ESENŞEHİR - ÜMRANİYE - KADIKÖY</h3>
+</div>
+</div>
+<span class="material-symbols-outlined text-blue-600">accessible</span>
+</div>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-4xl font-headline font-extrabold tracking-tighter text-primary">12</span>
+<span class="text-lg font-headline font-bold text-primary">Minutes Away</span>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center mb-1">
+<span class="text-[11px] font-label font-bold text-slate-500 tracking-wide uppercase">AI Occupancy Prediction</span>
+<span class="text-sm font-bold text-tertiary">%65 Dolu</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 65%"></div>
+</div>
+</div>
+</div>
+<!-- ComfortCard 3: Low Crowdedness (Green) -->
+<div class="bg-surface-container-lowest rounded-full p-6 transition-all duration-300 active:scale-[0.98] shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+<div class="flex items-start justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="bg-tertiary-fixed text-on-tertiary-fixed font-headline font-bold text-lg px-3 py-1 rounded-lg">8A</div>
+<div class="max-w-[180px]">
+<p class="text-[10px] font-label font-bold text-slate-400 tracking-widest leading-none mb-1 uppercase">Route</p>
+<h3 class="text-sm font-headline font-bold text-primary leading-tight">BATI ATAŞEHİR - KADIKÖY</h3>
+</div>
+</div>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-blue-600">accessible</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-4xl font-headline font-extrabold tracking-tighter text-primary">24</span>
+<span class="text-lg font-headline font-bold text-primary">Minutes Away</span>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center mb-1">
+<span class="text-[11px] font-label font-bold text-slate-500 tracking-wide uppercase">AI Occupancy Prediction</span>
+<span class="text-sm font-bold text-emerald-600">%32 Dolu</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 rounded-full" style="width: 32%"></div>
+</div>
+</div>
+</div>
+<!-- ComfortCard 4: Next Departure (Asymmetric variation) -->
+<div class="bg-primary text-white rounded-full p-6 transition-all duration-300 active:scale-[0.98] shadow-lg">
+<div class="flex items-start justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="bg-white text-primary font-headline font-bold text-lg px-3 py-1 rounded-lg">MR1</div>
+<div class="max-w-[180px]">
+<p class="text-[10px] font-label font-bold text-blue-200 tracking-widest leading-none mb-1 uppercase">Route</p>
+<h3 class="text-sm font-headline font-bold text-white leading-tight">MARMARAY TRANSFER - KADIKÖY</h3>
+</div>
+</div>
+</div>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-4xl font-headline font-extrabold tracking-tighter text-white">40</span>
+<span class="text-lg font-headline font-bold text-white/80">Minutes Away</span>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center mb-1">
+<span class="text-[11px] font-label font-bold text-blue-200 tracking-wide uppercase">AI Occupancy Prediction</span>
+<span class="text-sm font-bold text-emerald-300">%15 Dolu</span>
+</div>
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-400 rounded-full" style="width: 15%"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 transition-transform duration-300 ease-out active:scale-90 hover:text-blue-700" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-blue-900 dark:bg-blue-800 text-white rounded-2xl px-5 py-2 transition-transform duration-300 ease-out active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1">search</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 transition-transform duration-300 ease-out active:scale-90 hover:text-blue-700" href="#">
+<span class="material-symbols-outlined mb-1">warning</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 transition-transform duration-300 ease-out active:scale-90 hover:text-blue-700" href="#">
+<span class="material-symbols-outlined mb-1">bookmark</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Saved</span>
+</a>
+</nav>
+<!-- Floating Action Button for Map Toggle (Editorial Touch) -->
+<button class="fixed bottom-24 right-6 z-40 w-14 h-14 bg-surface-container-lowest/80 backdrop-blur-xl rounded-full shadow-xl flex items-center justify-center group transition-all duration-300 active:scale-90 hover:bg-primary-container">
+<span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">map</span>
+</button>
+</body></html>

@@ -1,0 +1,33 @@
+# Env / secrets (backend/.env committed intentionally — quick deploy defaults)
+.env
+!.env.example
+!backend/.env
+.env.local
+*.pem
+
+# Node
+backend/node_modules/
+npm-debug.log*
+
+# Python ML service
+backend/ml_service/.venv/
+backend/ml_service/__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Flutter / Dart
+mobile/.dart_tool/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/build/
+mobile/.packages
+mobile/pubspec.lock.bak
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# OS
+Thumbs.db

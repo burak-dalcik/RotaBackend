@@ -1,0 +1,75 @@
+# Rota: sabit değerler (hızlı kurulum). Güvenlik sonraya bırakıldı.
+# docker compose up -d --build
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: rota
+      POSTGRES_PASSWORD: rota123
+      POSTGRES_DB: rota
+    volumes:
+      - rota_pgdata:/var/lib/postgresql/data
+      - ./backend/db/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    ports:
+      - "5442:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rota -d rota"]
+      interval: 3s
+      timeout: 5s
+      retries: 15
+    restart: unless-stopped
+
+  ml:
+    build:
+      context: ./backend/ml_service
+      dockerfile: Dockerfile
+    environment:
+      ML_MODEL_DIR: /ml
+    volumes:
+      - ./backend/ml:/ml:ro
+    ports:
+      - "5042:5050"
+    # Sadece süreç + /health 200: model yüklenemese bile (ml_loaded:false) stack kalkar.
+    # Model durumu: curl -s http://127.0.0.1:5042/health | jq .ml_loaded  veya GET /api/v1/ml/status
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5050/health', timeout=8).read()",
+        ]
+      interval: 10s
+      timeout: 12s
+      retries: 6
+      start_period: 90s
+    restart: unless-stopped
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3142:3000"
+    environment:
+      DATABASE_URL: postgres://rota:rota123@postgres:5432/rota
+      ML_SERVICE_URL: http://ml:5050
+      ML_ENABLED: "true"
+      ML_TIMEOUT_MS: "15000"
+      # ML hata verirse geçici yedek (0 yolcu göstermemek için true önerilir)
+      ML_USE_MOCK_ON_FAILURE: "true"
+      ML_DEFAULT_RESMITATIL: "0"
+      PORT: "3000"
+      NODE_ENV: production
+      TRUST_PROXY: "1"
+      PUBLIC_API_URL: https://gorisle.dalciksoft.com
+    depends_on:
+      postgres:
+        condition: service_healthy
+      ml:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  rota_pgdata:

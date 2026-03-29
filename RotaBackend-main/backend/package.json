@@ -1,0 +1,25 @@
+{
+  "name": "rota-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "ml:bridge": "cd ml_service && python -m uvicorn app:app --host 0.0.0.0 --port 5042",
+    "dev:stack": "concurrently -n api,ml -c blue,green \"npm run dev\" \"npm run ml:bridge\""
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

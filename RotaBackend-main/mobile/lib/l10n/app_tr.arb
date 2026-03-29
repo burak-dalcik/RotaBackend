@@ -1,0 +1,148 @@
+{
+  "@@locale": "tr",
+  "appTitle": "Rota",
+  "navStops": "Duraklar",
+  "navAI": "Yapay Zeka",
+  "navSettings": "Ayarlar",
+  "navHome": "Ana sayfa",
+  "navSearch": "Ara",
+  "navAlerts": "Uyarılar",
+  "navSaved": "Kaydedilenler",
+  "homeHeadline": "Sonraki rotanı bul",
+  "homeSubtitle": "Durak listesi ve özet süreler sunucudan gelir; detayda yaklaşan seferler ve ML doluluk.",
+  "searchHint": "Durak kodu veya adı",
+  "stopsSection": "Duraklar",
+  "viewMap": "HARİTAYI AÇ",
+  "stopsLoadError": "Duraklar yüklenemedi.",
+  "retry": "Yeniden dene",
+  "noStopsOnServer": "Sunucuda kayıtlı durak yok.",
+  "noSearchMatch": "Aramanızla eşleşen durak yok.",
+  "stopRampOk": "Durak rampası: uygun",
+  "stopRampNo": "Durak rampası: yok / bilinmiyor",
+  "noTrip60": "Önümüzdeki 60 dk içinde sefer yok",
+  "minutesShort": "dk",
+  "mapLabel": "HARİTA",
+  "mapHint": "Canlı harita için konum izni gerekir (yakında).",
+  "langSwitchToEnTooltip": "İngilizce",
+  "langSwitchToTrTooltip": "Türkçe",
+  "mlTooltipAbout": "ML hakkında",
+  "mlDialogTitle": "Yapay zeka doluluk tahmini",
+  "mlDialogIntro": "Rota, doluluk tahminini sunucunuzda çalışan XGBoost modeli ile üretir.",
+  "mlDialogFlow": "Akış: Uygulama → Node API → Python ML köprüsü → .pkl modeli.",
+  "mlDialogCapacity": "Bu ekrandaki yüzdeler, araç kapasitesine göre hesaplanır.",
+  "mlServerOn": "Sunucu ML: açık",
+  "mlServerOff": "Sunucu ML: kapalı",
+  "mlStatusUnreadable": "ML durumu şu an okunamadı (ağ veya sunucu).",
+  "ok": "Tamam",
+  "busesLoadError": "Otobüsler yüklenemedi.",
+  "noApproaching60": "Önümüzdeki 60 dakikada yaklaşan otobüs yok.",
+  "refresh": "Yenile",
+  "pullRefreshHint": "Tahminler sunucudaki ML modelinden gelir; aşağı çekerek yenileyin.",
+  "liveStatus": "CANLI DURUM",
+  "smartStopTitle": "Akıllı durak",
+  "comfortRoute": "HAT",
+  "comfortMinutesAway": "dakika içinde",
+  "comfortMlLabel": "YZ DOLULUK TAHMİNİ",
+  "comfortFullnessPercent": "{percent}% dolu",
+  "@comfortFullnessPercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "mlBannerDisabled": "ML devre dışı — doluluk tahmini yedek modda üretiliyor.",
+  "mlBannerBridgeDown": "ML köprüsüne ulaşılamıyor — tahminler yedek modda olabilir.",
+  "mlBannerModelsDown": "ML modelleri yüklenemedi — tahminler yedek modda olabilir.",
+  "mlBannerLive": "Doluluk tahmini yapay zeka modeli ile üretiliyor (XGBoost).",
+  "mlBridgeDetail": "Köprü: {detail}",
+  "@mlBridgeDetail": {
+    "placeholders": {
+      "detail": {
+        "type": "String"
+      }
+    }
+  },
+  "iettRouteMapTitle": "İETT güzergâh",
+  "comfortMlModelBadge": "ML · XGBoost",
+  "comfortMlFallbackBadge": "Yedek tahmin",
+  "comfortPaxEstimate": "Tahmini yolcu: {pax} / {cap}",
+  "@comfortPaxEstimate": {
+    "placeholders": {
+      "pax": {
+        "type": "int"
+      },
+      "cap": {
+        "type": "int"
+      }
+    }
+  },
+  "mlDetailDialogTitle": "ML Tahmin Detayı",
+  "mlDetailRoute": "Hat: {hatKodu} — {hatAdi}",
+  "@mlDetailRoute": {
+    "placeholders": {
+      "hatKodu": { "type": "String" },
+      "hatAdi": { "type": "String" }
+    }
+  },
+  "mlDetailCrowding": "Doluluk: {percent}%",
+  "@mlDetailCrowding": {
+    "placeholders": {
+      "percent": { "type": "int" }
+    }
+  },
+  "mlDetailSource": "Kaynak: {source}",
+  "@mlDetailSource": {
+    "placeholders": {
+      "source": { "type": "String" }
+    }
+  },
+  "mlDetailSourceModel": "XGBoost Model Tahmini",
+  "mlDetailSourceFallback": "Yedek Tahmin (Fallback)",
+  "mlDetailArrival": "Varış: {minutes} dakika",
+  "@mlDetailArrival": {
+    "placeholders": {
+      "minutes": { "type": "int" }
+    }
+  },
+  "mlDetailAccessible": "Engelli erişimi: {status}",
+  "@mlDetailAccessible": {
+    "placeholders": {
+      "status": { "type": "String" }
+    }
+  },
+  "mlDetailAccessibleYes": "Uygun",
+  "mlDetailAccessibleNo": "Uygun değil",
+  "close": "Kapat",
+  "mlDashTitle": "Yapay Zeka Paneli",
+  "mlDashModelName": "XGBoost Regressor",
+  "mlDashModelDesc": "Doluluk tahmini için eğitilmiş makine öğrenmesi modeli.",
+  "mlDashFeatures": "Özellikler: Saat, Hafta sonu, Resmi tatil, Hat kodu, Kapasite",
+  "mlDashPipeline": "Veri Akışı",
+  "mlDashStep1": "Flutter uygulama istek gönderir",
+  "mlDashStep2": "Node.js API isteği iletir",
+  "mlDashStep3": "Python FastAPI modeli çalıştırır",
+  "mlDashStep4": "XGBoost tahmin üretir",
+  "mlDashBridgeStatus": "Köprü Durumu",
+  "mlDashConnected": "Bağlı",
+  "mlDashDisconnected": "Bağlantı yok",
+  "mlDashModelLoaded": "Model Yüklü",
+  "mlDashModelNotLoaded": "Model Yüklenemedi",
+  "mlDashCheckNow": "Durumu kontrol et",
+  "settingsTitle": "Ayarlar",
+  "settingsLanguage": "Dil",
+  "settingsLanguageDesc": "Uygulama arayüz dilini değiştir",
+  "settingsTurkish": "Türkçe",
+  "settingsEnglish": "English",
+  "settingsApiEndpoint": "API Adresi",
+  "settingsAbout": "Hakkında",
+  "settingsAboutDesc": "Rota — İstanbul toplu taşıma yapay zeka doluluk tahmin uygulaması. tech.istanbul Datathon 2026 projesi.",
+  "settingsVersion": "Sürüm",
+  "mlStatusActive": "YZ Aktif",
+  "mlStatusInactive": "YZ Pasif",
+  "navMap": "Harita",
+  "mapNearestStop": "En Yakın Durak",
+  "mapLocationServiceOff": "Konum servisi kapalı. Lütfen ayarlardan açın.",
+  "mapLocationDenied": "Konum izni reddedildi.",
+  "mapLocationDeniedForever": "Konum izni kalıcı olarak reddedildi. Ayarlardan izin verin."
+}

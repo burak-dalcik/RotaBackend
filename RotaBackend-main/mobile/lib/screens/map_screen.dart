@@ -34,9 +34,49 @@ class _MapTabState extends State<MapTab> {
   @override
   void initState() {
     super.initState();
-    widget.stopsFuture.then((stops) {
-      if (mounted) setState(() => _stops = stops);
+    _listenFuture(widget.stopsFuture);
+  }
+
+  @override
+  void didUpdateWidget(covariant MapTab old) {
+    super.didUpdateWidget(old);
+    if (old.stopsFuture != widget.stopsFuture) {
+      _listenFuture(widget.stopsFuture);
+    }
+  }
+
+  void _listenFuture(Future<List<StopSummary>> f) {
+    f.then((stops) {
+      if (mounted) {
+        setState(() => _stops = stops);
+        _fitBounds();
+      }
     });
+  }
+
+  Future<void> _fitBounds() async {
+    if (_stops == null || !_mapController.isCompleted) return;
+    final withLoc = _stops!.where((s) => s.hasLocation).toList();
+    if (withLoc.length < 2) return;
+
+    double minLat = 90, maxLat = -90, minLng = 180, maxLng = -180;
+    for (final s in withLoc) {
+      if (s.enlem! < minLat) minLat = s.enlem!;
+      if (s.enlem! > maxLat) maxLat = s.enlem!;
+      if (s.boylam! < minLng) minLng = s.boylam!;
+      if (s.boylam! > maxLng) maxLng = s.boylam!;
+    }
+
+    final controller = await _mapController.future;
+    controller.animateCamera(
+      CameraUpdate.newLatLngBounds(
+        LatLngBounds(
+          southwest: LatLng(minLat, minLng),
+          northeast: LatLng(maxLat, maxLng),
+        ),
+        60, // padding
+      ),
+    );
   }
 
   Future<void> _goToMyLocation() async {
@@ -227,9 +267,49 @@ class _MapTabState extends State<MapTab> {
           onMapCreated: (controller) {
             if (!_mapController.isCompleted) {
               _mapController.complete(controller);
+              // If stops already loaded, fit bounds
+              _fitBounds();
             }
           },
         ),
+
+        // Loading overlay when stops not yet loaded
+        if (_stops == null)
+          Positioned(
+            top: 16,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: Material(
+                borderRadius: BorderRadius.circular(24),
+                color: Colors.white,
+                elevation: 3,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const SizedBox(
+                        width: 18,
+                        height: 18,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      ),
+                      const SizedBox(width: 10),
+                      Text(
+                        l10n.stopsSection,
+                        style: GoogleFonts.inter(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          color: AppTheme.deepTransitBlue,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
 
         // My Location FAB
         Positioned(

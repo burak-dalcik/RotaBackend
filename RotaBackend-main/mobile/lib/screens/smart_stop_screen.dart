@@ -64,7 +64,8 @@ class _SmartStopScreenState extends State<SmartStopScreen> {
 
   Future<void> _onRefresh() async {
     final f = _load();
-    setState(() => _future = f);
+    _future = f;
+    setState(() {});
     await f;
   }
 
